@@ -1,0 +1,20 @@
+...
+<script src='../plugins/datepicker/datepicker.min.js'></script>
+<script src='../plugins/datepicker/datepicker.zh-CN.js'></script>
+<script>
+    $('#startDate').datepicker({
+        format: 'yyyy-mm-dd',
+        language: 'zh-CN',
+        autoHide: true,
+    }).on('pick.datepicker', function (e) {
+        $('#endDate').datepicker('setStartDate', e.date);
+    });
+
+    $('#endDate').datepicker({
+        format: 'yyyy-mm-dd',
+        language: 'zh-CN',
+        autoHide: true,
+    }).on('pick.datepicker', function (e) {
+        $('#startDate').datepicker('setEndDate', e.date);
+    });
+</script>
